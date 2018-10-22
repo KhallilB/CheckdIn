@@ -11,6 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://localhost/CheckdIn', { useNewUrlParser: true });
 
+require('./controllers/feeds')(app);
+
+module.exports = (app);
+
 app.listen(3000, () => {
     console.log('Up and Running!');
 })
